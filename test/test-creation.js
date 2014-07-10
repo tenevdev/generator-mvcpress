@@ -21,12 +21,13 @@ describe('mvcpress generator', function () {
     var expected = [
       // add files you expect to exist here.
       '.jshintrc',
-      '.editorconfig'
+      '.editorconfig',
+      'app.js',
+      'bower.json',
+      'package.json',
+      'Gruntfile.js'
     ];
 
-    helpers.mockPrompt(this.app, {
-      'someOption': true
-    });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
       helpers.assertFile(expected);
